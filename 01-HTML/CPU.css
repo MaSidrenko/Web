@@ -1,6 +1,6 @@
 body {
     background-color: #323232;
-    color: gray;
+    color: rgb(207, 205, 205);
     font-family: "Roboto";
     padding-left: 350px;
     padding-right: 550px;  
@@ -18,6 +18,7 @@ p {
 ol {
     list-style-type: upper-roman;
 }
+
 .nesting-lvl-1 {
     list-style-type: circle;
 }
@@ -31,8 +32,8 @@ ol {
 .padd-150px {
     padding-left: 150px;
 }
-.thead td {
-    background-color: #6b5fb5;
+.thead td, th {
+    background-color: #c59939;
     color: white;
     font-weight: 700;
     font-size: .9em;
@@ -41,12 +42,25 @@ ol {
 table {
     width: 100%;
 }
-table td {
-    border: 1px solid #aeaed3;
+table td, th  {
+    border: 1px #c59939;
     padding: 5px 10px;
 }
 .row {
     color: #fff;
     font-size: .9em;
     text-align: center;
+}
+figure {
+    text-align: center;
+    font-style: italic;
+}
+a {
+    color: rgb(216, 142, 5);
+}
+a:hover, a:visited:hover {
+    color: #ffd900
+}
+a:visited {
+    color: rgb(218, 58, 1);
 }
