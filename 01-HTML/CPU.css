@@ -2,6 +2,8 @@ body {
     background-color: #323232;
     color: gray;
     font-family: "Roboto";
+    padding-left: 350px;
+    padding-right: 550px;  
 }
 h1 {
     text-align: center;
@@ -21,4 +23,30 @@ ol {
 }
 .nesting-lvl-2 {
     list-style-type: "- ";
+}
+
+.padd-200px {
+    padding-left: 200px;
+}
+.padd-150px {
+    padding-left: 150px;
+}
+.thead td {
+    background-color: #6b5fb5;
+    color: white;
+    font-weight: 700;
+    font-size: .9em;
+    text-align: center;
+}
+table {
+    width: 100%;
+}
+table td {
+    border: 1px solid #aeaed3;
+    padding: 5px 10px;
+}
+.row {
+    color: #fff;
+    font-size: .9em;
+    text-align: center;
 }
