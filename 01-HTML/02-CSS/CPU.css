@@ -69,3 +69,7 @@ div {
     border: solid 1px;
     margin: 32px;
 }
+table:hover {
+    /* box-shadow: 10px 10px 10px 10px grey ; */
+    box-shadow: inset 10px 10px 10px 10px #c59939;
+}
