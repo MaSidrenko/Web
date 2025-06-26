@@ -18,8 +18,11 @@
             </div>
             <div>
                 <label for="password">Пароль:</label>
-                <input type="password" id="password" placeholder="Введите пароль" name="password" size="32" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\s]).{8,}$">
+                <input type="password" id="password" placeholder="Введите пароль" name="password" size="32" 
+                required pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[^\s])(?=.*[~!@#$%^&*\(\)_+\-=\[\]\{\}\/\\
+                '&quot\;:,.\|?<>]).{8,}$">
             </div>
+            <!-- (?=.*[~!@#$%^&\/\\(\)№;%:?*\[\]\<\>;\:\'\'\"\"^?|\{\}-_+=].) -->
             <div>
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" placeholder="Введите ваш email" name="email" size="32" required>
