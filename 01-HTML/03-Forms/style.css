@@ -2,3 +2,24 @@
 body {
     font-family: 'Josefin Sans';
 }
+
+textarea {
+    resize: none;
+    width: 500px;
+    height: 300px;
+}
+
+fieldset {
+    width: 500px;
+}
+
+.EULA {
+    width: 520px;
+    height: 300px;
+    border: solid 1px;
+    overflow: scroll;
+    text-align: justify;
+}
+div {
+    margin: 25px;
+}
