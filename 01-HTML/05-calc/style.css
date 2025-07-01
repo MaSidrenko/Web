@@ -1,39 +1,83 @@
 body {
-    background-image: url(img/bliss.jpg);
-    font-family: Tahoma;
-    /* background-size: cover; */
+  background-image: url(img/bliss.jpg);
+  font-family: Tahoma;
+  /* background-size: cover; */
 }
 .main-window {
-    border: solid 1px;
-    /* position: relative;
+  /* border: solid 1px; */
+  /* position: relative;
     left: 400px;
     top: 100px; */
-    align-self: center;
-    width: 400px;
-    height: 360px;
-    background-color:  rgb(236, 233, 216);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  align-self: center;
+  width: 400px;
+  height: 360px;
+  background-color: rgb(236, 233, 216);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 #app-ico {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 .title-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    background-color: blue;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  /* background-color: blue; */
+  background-image: linear-gradient(
+    #77ccff,
+    #0469ec,
+    #0469ec,
+    #0469ec,
+    #0569ff,
+    #0569ff,
+    #0569ff
+  );
+  box-shadow: inset 0px 0px 4px 1px #002195;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .title-bar-left-side {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+}
+.title-bar-right-side {
+  /* margin: 1px; */
+}
+.control-button, .control-button:disabled:hover, .control-button:disabled  {
+  width: 24px;
+  height: 24px;
+  border: solid 1px white;
+  /* border-color: white; */
+  border-radius: 5px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-size: 15px;
+  background-image: linear-gradient(to bottom right, #55a1ff, #0025b5);
+  box-shadow: inset 3px 1px 3px 0px #77a1f5;
+  font-weight: 700;
+  font-stretch: expanded;
 }
 
-.control-button {
-    width:24px;
-    height: 24px;
+.control-button:hover {
+  /* border-color: lightgray; */
+  background-image: linear-gradient(to bottom right, #75c1ff, #2045d5);
+  box-shadow: inset 0px 0px 5px 5px #9bb5eb;
+}
+.control-button:disabled:hover, .control-button:disabled {
+    color: lightgray;
+    background-color: gray;
+}
+
+#close-btn {
+  background-image: linear-gradient(to bottom right, #c97475, #ff3010);
+  box-shadow: inset 3px 1px 3px 0px #c49a9b;
+}
+
+#close-btn:hover {
+    background-image: linear-gradient(to bottom right, #E99495, #ff5030);
+    box-shadow: inset 0px 0px 5px 5px #c49a9b;
 }
