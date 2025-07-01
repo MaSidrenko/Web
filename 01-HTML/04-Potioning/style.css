@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    background-color: rgb(255, 150, 112);
+    font-family: 'Press Start 2P';
+}
+h1 {
+    position: sticky;
+    top: 0px;
+    background: rgb(255, 150, 112);
+}
+.logo {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    z-index: -1;
+    left: 200px;
+    top: 150px;
+}
