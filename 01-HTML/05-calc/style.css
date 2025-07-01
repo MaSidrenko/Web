@@ -43,6 +43,10 @@ body {
   display: flex;
   align-items: center;
 }
+
+.title-text {
+    text-shadow: 1px 1px 0px black;
+}
 .title-bar-right-side {
   /* margin: 1px; */
 }
