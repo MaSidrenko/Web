@@ -45,12 +45,14 @@ body {
 }
 
 .title-text {
-    text-shadow: 1px 1px 0px black;
+  text-shadow: 1px 1px 0px black;
 }
 .title-bar-right-side {
   /* margin: 1px; */
 }
-.control-button, .control-button:disabled:hover, .control-button:disabled  {
+.control-button,
+.control-button:disabled:hover,
+.control-button:disabled {
   width: 24px;
   height: 24px;
   border: solid 1px white;
@@ -71,9 +73,10 @@ body {
   background-image: linear-gradient(to bottom right, #75c1ff, #2045d5);
   box-shadow: inset 0px 0px 5px 5px #9bb5eb;
 }
-.control-button:disabled:hover, .control-button:disabled {
-    color: lightgray;
-    background-color: gray;
+.control-button:disabled:hover,
+.control-button:disabled {
+  color: lightgray;
+  background-color: gray;
 }
 
 #close-btn {
@@ -82,6 +85,52 @@ body {
 }
 
 #close-btn:hover {
-    background-image: linear-gradient(to bottom right, #E99495, #ff5030);
-    box-shadow: inset 0px 0px 5px 5px #c49a9b;
+  background-image: linear-gradient(to bottom right, #e99495, #ff5030);
+  box-shadow: inset 0px 0px 5px 5px #c49a9b;
+}
+.left-side-line {
+  position: absolute;
+  height: 326px;
+  top: 42px;
+  left: 8px;
+  background: linear-gradient(
+      to right,
+      rgba(0, 51, 215, 101),
+      rgba(24, 103, 245, 128),
+      rgba(0, 51, 215, 101)
+    )
+    border-box;
+  border-left: 5px solid transparent;
+}
+.bottom-side-line {
+  position: absolute;
+  width: 400px;
+  left: 8px;
+  top: 367px;
+  background: linear-gradient(
+      to top,
+      rgba(4, 29, 86, 42),
+      rgba(0, 22, 151, 71),
+      rgba(0, 29, 168, 78),
+      rgba(0, 56, 213, 100),
+      rgba(12, 60, 180, 90)
+    )
+    border-box;
+  border-bottom: 5px solid transparent;
+}
+.right-side-line {
+  position: absolute;
+  height: 326px;
+  top: 42px;
+  left: 403.1px;
+  background: linear-gradient(
+      to right,
+      rgba(4, 29, 86, 42),
+      rgba(0, 22, 151, 71),
+      rgba(0, 29, 168, 78),
+      rgba(0, 56, 213, 100),
+      rgba(12, 60, 180, 90)
+    )
+    border-box;
+  border-left: 5px solid transparent;
 }
