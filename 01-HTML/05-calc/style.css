@@ -174,15 +174,18 @@ input[type="text"] {
 .buttons button {
   width: 50px;
   height: 40px;
-  margin: 5px 10px;
+  margin:5px;
   border-radius: 5px;
   border: solid 1px darkblue;
 }
 .memory-buttons {
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-columns: 50px;
+  grid-template-rows: 40px 40px 40px 40px 40px;
+  grid-gap: 10px;
+  /* align-items: center; */
 }
 .memory-buttons > button {
   color: red;
@@ -197,6 +200,9 @@ input[type="text"] {
 .main-block button {
   margin: 5px;
 }
+.wide-buttons {
+  margin-left: 15px;
+}
 .wide-buttons > button {
   width: 85px;
   color: red;
@@ -206,7 +212,26 @@ input[type="text"] {
   grid-template-columns: 50px 50px 50px;
   grid-template-rows: 40px 40px 40px 40px;
   grid-gap: 10px;
+  margin-left: 15px;
 }
 .digit-buttons button {
   color: darkblue;
+}
+
+.operational-buttons, .operational-results {
+  display: grid;
+  grid-template-columns: 50px;
+  grid-template-rows: 40px 40px 40px 40px;
+  grid-gap: 10px;
+  margin-left: 10px;
+}
+.operational-results > button {
+  color: darkblue;
+}
+.operational-buttons > button {
+  color: darkblue;
+}
+.digits-and-operations {
+  display: flex;
+  justify-content: left;
 }
