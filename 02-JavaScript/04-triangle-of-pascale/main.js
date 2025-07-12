@@ -8,23 +8,23 @@ function GenereteTrianglePascale() {
     const triangle = new Array(size);
     for (let i = 0; i < size; i++) {
         triangle[i] = new Array(i + 1);
-        
+
         triangle[i][0] = 1;
         triangle[i][i] = 1;
         for (let j = 1; j < i; j++) {
             triangle[i][j] = triangle[i - 1][j - 1] + triangle[i - 1][j];
         }
-        
+
     }
-    
-    if(size >= 25) {
+
+    if (size >= 25) {
         document.body.style.setProperty('font-size', '10px', 'important');
     }
     document.writeln('<pre>')
     for (let i = 0; i < size; i++) {
         document.write(' '.repeat((size - i - 1) * 4));
-       for (let j = 0; j <= i; j++) {
-           document.write(triangle[i][j] + "  ".repeat(4));
+        for (let j = 0; j <= i; j++) {
+            document.write(triangle[i][j] + "  ".repeat(4));
         }
         document.write('<br>')
     }
@@ -42,7 +42,7 @@ function GenereteTrianglePascale() {
 }
 
 function Cancle() {
-     document.body.style.fontSize = '32px';
+    document.body.style.fontSize = '32px';
     document.head.innerHTML = '<link rel="stylesheet" href="../../style.css"></link>';
     document.body.innerHTML = '';
     document.writeln('<pre>')
@@ -62,5 +62,6 @@ function Cancle() {
 }
 
 function Back() {
+    window.close();
     window.open('..\\index.html');
 }

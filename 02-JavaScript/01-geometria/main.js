@@ -7,110 +7,112 @@ function GenereteFigure() {
     document.writeln('<pre>')
     document.writeln('<div class="terminal"><div class= "prompt">dark_soulPC@MaximSidorenko:~/E:/Users/Maxim_Sidorenko/sourceVS/Web/02-JavaScript/01-geometria/run GenereteFigure.js</div >')
     document.writeln('</pre>')
+    document.writeln('<pre>')
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
-            document.writeln('* ');
+            document.write('* ');
         }
-        document.writeln('<br>');
+        document.write('<br>');
     }
     
-    document.writeln('<br>');
+    document.write('<br>');
     
     for (let i = 0; i < size; i++) {
         for (let j = 0; j <= i; j++) {
-            document.writeln('* ');
+            document.write('* ');
         }
-        document.writeln('<br>');
+        document.write('<br>');
     }
     
-    document.writeln('<br>');
+    document.write('<br>');
     
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size - i; j++) {
-            document.writeln('* ');
+            document.write('* ');
         }
-        document.writeln('<br>');
+        document.write('<br>');
     }
     
-    document.writeln('<br>');
-    
+    document.write('<br>');
+    // document.writeln('<pre>')
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
             if (i > j) {
-                document.writeln("&nbsp;&nbsp;");
+                document.write("&nbsp;&nbsp;");
             }
             else {
-                document.writeln('* ');
+                document.write('* ');
             }
         }
-        document.writeln('<br>');
+        document.write('<br>');
     }
-
-    document.writeln('<br>');
+    
+    document.write('<br>');
     
     for (var i = 0; i < size; i++) {
         for (var j = size - 1; j >= 0; j--) {
             if (j <= i) {
-                document.writeln('* ');
+                document.write('* ');
             } else {
-                document.writeln("&nbsp;&nbsp;");
+                document.write("&nbsp;&nbsp;");
             }
         }
-        document.writeln('<br>');
+        document.write('<br>');
     }
     
-    document.writeln('<br>');
+    document.write('<br>');
     
     for (var i = 0; i < size; i++) {
         for (var j = size; j >= 0; j--) {
             if (i == j) {
-                document.writeln("/");
+                document.write("/");
             }
             else {
-                document.writeln("&nbsp");
+                document.write("&nbsp");
             }
         }
         for (var j = 0; j < size; j++) {
             if (i == j) {
-                document.writeln("\\");
+                document.write("\\");
             } else {
-                document.writeln("&nbsp");
+                document.write("&nbsp");
             }
         }
-        document.writeln('<br>');
+        document.write('<br>');
     }
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
             if (i == j) {
-                document.writeln("\\");
+                document.write("\\");
             }
             else {
-                document.writeln("&nbsp");
+                document.write("&nbsp");
             }
         }
         for (var j = size; j >= 0; j--) {
             if (i == j) {
-                document.writeln("/");
+                document.write("/");
             }
             else {
-                document.writeln("&nbsp");
+                document.write("&nbsp");
             }
         }
-        document.writeln("<br>");
+        document.write("<br>");
     }
     
-    document.writeln('<br>');
+    document.write('<br>');
     
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
             if ((i + j) % 2 == 0) {
-                document.writeln('+ ');
+                document.write('+ ');
             } else {
-                document.writeln('- ');
+                document.write('- ');
             }
         }
-        document.writeln('<br>');
+        document.write('<br>');
     }
+    document.writeln('</pre>')
     document.writeln('<button onclick="Cancle()">Отменить Генерацию</button>')
     document.head.innerHTML = '<link rel="stylesheet" href="../../style.css"></link>';
     document.writeln('<br>')
@@ -143,5 +145,6 @@ function Cancle() {
 }
 
 function Back() {
+    window.close();
     window.open('..\\index.html');
 }

@@ -49,5 +49,6 @@ function Cancle() {
     document.writeln('</pre>')
 }
 function Back() {
+        window.close();
     window.open('..\\index.html');
 }
