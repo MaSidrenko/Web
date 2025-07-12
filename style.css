@@ -3,6 +3,7 @@ body {
   background-color: rgb(0, 0, 0);
   color: green;
   font-size: 32px ;
+  font-family: 'Josefin Sans';
 }
 
 button {
@@ -43,7 +44,7 @@ a:visited {
     color: rgb(0, 83, 0);
 }
 .terminal {
-  font-family: monospace;
+  /* font-family: monospace; */
   /* background-color: #000; */
     color: green;
   /* padding: 20px; */

@@ -112,7 +112,7 @@ function GenereteFigure() {
         document.writeln('<br>');
     }
     document.writeln('<button onclick="Cancle()">Отменить Генерацию</button>')
-    document.head.innerHTML = '<link rel="stylesheet" href="../style.css"></link>';
+    document.head.innerHTML = '<link rel="stylesheet" href="../../style.css"></link>';
     document.writeln('<br>')
     document.writeln('<br>')
     document.writeln('<button onclick="Back()">Назад</button>')
@@ -123,7 +123,7 @@ function GenereteFigure() {
 }
 
 function Cancle() {
-    document.head.innerHTML = '<link rel="stylesheet" href="../style.css"></link>';
+    document.head.innerHTML = '<link rel="stylesheet" href="../../style.css"></link>';
     // document.writeln(' ');
     document.body.innerHTML = '';
     document.writeln('<pre>')

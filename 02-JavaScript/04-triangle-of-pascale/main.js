@@ -32,7 +32,7 @@ function GenereteTrianglePascale() {
 
 
     document.writeln('<button onclick="Cancle()">Отменить Генерацию</button>')
-    document.head.innerHTML = '<link rel="stylesheet" href="../style.css"></link>';
+    document.head.innerHTML = '<link rel="stylesheet" href="../../style.css"></link>';
     document.writeln('<br>')
     document.writeln('<br>')
     document.writeln('<button onclick="Back()">Назад</button>')
@@ -43,7 +43,7 @@ function GenereteTrianglePascale() {
 
 function Cancle() {
      document.body.style.fontSize = '32px';
-    document.head.innerHTML = '<link rel="stylesheet" href="../style.css"></link>';
+    document.head.innerHTML = '<link rel="stylesheet" href="../../style.css"></link>';
     document.body.innerHTML = '';
     document.writeln('<pre>')
     document.writeln('<div class="terminal"><div class= "prompt"> dark_soulPC@MaximSidorenko:~/E:/Users/Maxim_Sidorenko/sourceVS/Web/02-JavaScript/04-triangle-of-pascale/run Cancle.js</div >')

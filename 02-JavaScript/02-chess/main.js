@@ -34,7 +34,7 @@ function GenereteChess() {
     }
    
     document.writeln('<button onclick="Cancle()">Отменить Генерацию</button>')
-    document.head.innerHTML = '<link rel="stylesheet" href="../style.css"></link>';
+    document.head.innerHTML = '<link rel="stylesheet" href="../../style.css"></link>';
     document.writeln('<br>')
     document.writeln('<br>')
     document.writeln('<button onclick="Back()">Назад</button>')
@@ -51,7 +51,7 @@ function Cancle() {
     // document.writeln('<br></br>');
     // document.writeln('<button onclick="GenereteChess()">Сгенерировать</button>');
     // document.writeln('<br></br>');
-       document.head.innerHTML = '<link rel="stylesheet" href="../style.css"></link>';
+       document.head.innerHTML = '<link rel="stylesheet" href="../../style.css"></link>';
     document.body.innerHTML = '';
     document.writeln('<pre>')
     document.writeln('<div class="terminal"><div class= "prompt"> dark_soulPC@MaximSidorenko:~/E:/Users/Maxim_Sidorenko/sourceVS/Web/02-JavaScript/02-chess/run Cancle.js</div >')
