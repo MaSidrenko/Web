@@ -69,7 +69,7 @@ function Cancle() {
     document.writeln('</pre>')
 }
 function Back() {
-    window.close();
+    // window.close();
     window.open('..\\index.html');
 
 }

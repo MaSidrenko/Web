@@ -62,6 +62,6 @@ function Cancle() {
 }
 
 function Back() {
-    window.close();
+    // window.close();
     window.open('..\\index.html');
 }
