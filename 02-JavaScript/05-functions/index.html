@@ -11,19 +11,25 @@
 
 <body class="dark">
      <div id="header">
-        <div style="width: 88%;">header</div>
-        <input type="number" id="delay" value="3" min="1" max="10" />
-        <div onclick="SwitchBackground()"
-        id="background_switch"></div>
-        <!-- <img onclick="SwitchBackground()" src="img/sun.png" alt="Switch background img"
-            id="background_switch"> -->
-    </div>
+         <div style="width: 88%;">header</div>
+         <input type="number" id="delay" value="3" min="1" max="10" />
+         <div onclick="SwitchBackground()"
+         id="background_switch"></div>
+         <div onclick="SwitchBackground()"
+         id="background_switch_second"></div>
+      
+        </div>
+        <div id="mouse"></div>
         <h1>Functions</h1>
         <input type="number" name="base" id="base" placeholder="base power">
         <input type="number" name="exponent" id="exponent" placeholder="exponent power">
         <input type="number" name="power" id="power" placeholder="power" readonly>
         <br>
         <button onclick="calculate()">Calculate</button>
+        <input type="file" onchange="setImage()" id="image-file">
+        <div id="photo-container">
+            <img alt="photo" title="Photo" id="photo">
+        </div>
         <script src="functions.js"></script>
 </body>
 

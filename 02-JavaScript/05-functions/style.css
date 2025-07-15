@@ -1,38 +1,54 @@
-
 #header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#background_switch {
+#background_switch, #background_switch_second {
   width: 32px;
   height: 32px;
   margin: 24px;
   background-size: 32px 32px;
-  transition: background-image 3s;
-}
+  position: absolute;
+  right:  10px;
+ /* -webkit-transition: opacity 3s; */
 
-img[src="img/sun.jpg"] {
+}
+#background_switch {
+    background-image: url(img/sun.png);
     filter: brightness(0) invert(1);
+}
+#background_switch_second {
+    background-image: url(img/moon.png);
+}
+img[src="img/sun.jpg"] {
+  filter: brightness(0) invert(1);
 }
 
 .light {
-    background: wheat;
-    color: rgb(250, 100, 0);
+  background: wheat;
+  color: rgb(250, 100, 0);
 }
-.light #background_switch{
-    background-image: url('img/moon.png');
+.light #background_switch {
+    opacity: 0;
+  /* background-image: url("img/moon.png"); */
+
 }
 .dark {
-    background: black;
-    color: green;
+  background: black;
+  color: green;
 }
-.dark #background_switch {
-   background-image: url('img/sun.png');
-    filter: brightness(0) invert(1);
+.dark #background_switch_second {
+    opacity: 0;
+  /* background-image: url("img/sun.png"); */
 }
 #delay {
-    width: 50px;
-    height: 20px;
+  width: 50px;
+  height: 20px;
+  margin-right: 100px;
+}
+#photo-container {
+  width: 400px;
+  height: 300px;
+  border: solid 1px;
 }
