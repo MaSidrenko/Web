@@ -9,16 +9,9 @@ function Power(base, exponent) {
 }
 function SwitchBackground() {
     let switchButton = document.getElementById('background_switch');
-    // console.log(switchButton.attributes.src);
-    // switchButton.attributes.src.nodeValue = switchButton.attributes.src.nodeValue == 'img/moon.png' ? 'img/sun.png' : 'img/moon.png'
-    // console.log(switchButton.attributes.src.nodeValue);
-    if(switchButton.attributes.src.nodeValue == 'img/moon.png') {
-        switchButton.attributes.src.nodeValue = 'img/sun.png';
-        document.body.style.backgroundColor = "black";
-        document.body.style.color = "green";
-    } else {
-        switchButton.attributes.src.nodeValue = 'img/moon.png'
-        document.body.style.backgroundColor = "wheat";
-        document.body.style.color = "black";
-    }
+    let delay = Number(document.getElementById('delay').value);
+    document.body.style.transition = `background-color ${delay}s, color ${delay}s`;
+    switchButton.style.transition = `background-image ${delay}s`;
+    document.body.className = document.body.className === "light" ? "dark" : "light";
+    console.log(switchButton.attributes);
 }

@@ -1,0 +1,38 @@
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#background_switch {
+  width: 32px;
+  height: 32px;
+  margin: 24px;
+  background-size: 32px 32px;
+  transition: background-image 3s;
+}
+
+img[src="img/sun.jpg"] {
+    filter: brightness(0) invert(1);
+}
+
+.light {
+    background: wheat;
+    color: rgb(250, 100, 0);
+}
+.light #background_switch{
+    background-image: url('img/moon.png');
+}
+.dark {
+    background: black;
+    color: green;
+}
+.dark #background_switch {
+   background-image: url('img/sun.png');
+    filter: brightness(0) invert(1);
+}
+#delay {
+    width: 50px;
+    height: 20px;
+}

@@ -5,39 +5,26 @@
     <meta charset="UTF-8" />
     <title>05-Functions</title>
     <link rel="stylesheet" href="../../style.css">
-    <style>
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #background_switch {
-            width: 32px;
-            height: 32px;
-            margin: 24px;
-
-        }
-
-        img[src="img/sun.png"] {
-            filter: brightness(0) invert(1);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/sun.png" type="image/x-icon">
 </head>
 
-<body>
-    <div id="header">
+<body class="dark">
+     <div id="header">
         <div style="width: 88%;">header</div>
-        <img onclick="SwitchBackground()" src="img/sun.png" alt="Switch background img"
-            id="background_switch">
+        <input type="number" id="delay" value="3" min="1" max="10" />
+        <div onclick="SwitchBackground()"
+        id="background_switch"></div>
+        <!-- <img onclick="SwitchBackground()" src="img/sun.png" alt="Switch background img"
+            id="background_switch"> -->
     </div>
-    <h1>Functions</h1>
-    <input type="number" name="base" id="base" placeholder="base power">
-    <input type="number" name="exponent" id="exponent" placeholder="exponent power">
-    <input type="number" name="power" id="power" placeholder="power" readonly>
-    <br>
-    <button onclick="calculate()">Calculate</button>
-    <script src="functions.js"></script>
+        <h1>Functions</h1>
+        <input type="number" name="base" id="base" placeholder="base power">
+        <input type="number" name="exponent" id="exponent" placeholder="exponent power">
+        <input type="number" name="power" id="power" placeholder="power" readonly>
+        <br>
+        <button onclick="calculate()">Calculate</button>
+        <script src="functions.js"></script>
 </body>
 
 </html>
