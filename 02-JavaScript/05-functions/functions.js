@@ -13,13 +13,13 @@ function SwitchBackground() {
     let delay = Number(document.getElementById('delay').value);
     document.body.style.transition = `background-color ${delay}s, color ${delay}s`;
     // switchButton.style.transition = `background-image ${delay}s`;
-      switchButton.style.transition = `opacity ${delay}s`;
+    switchButton.style.transition = `opacity ${delay}s`;
     secondSwitchButton.style.transition = `opacity ${delay}s`;
     document.body.className = document.body.className === "light" ? "dark" : "light";
     console.log(switchButton.attributes);
 }
 
-document.addEventListener("mousemove", function(event){
+document.addEventListener("mousemove", function (event) {
     let x = event.clientX;
     let y = event.clientY;
     document.getElementById("mouse").innerHTML = `X = ${x}, Y = ${y}`;
@@ -27,7 +27,6 @@ document.addEventListener("mousemove", function(event){
 
 function setImage() {
     // let img = new Image();
-
     // let file_name = document.getElementById("image-file").value;
     // console.log(file_name);
     // console.log(file_name.split('\\'));
@@ -40,14 +39,16 @@ function setImage() {
     // console.log(document.getElementById("photo").src)
     let file_name = document.getElementById("image-file");
     let = file = file_name.files[0];
+    console.log("Объект файла, в нашем случаее картинки (C названием, типом, весом и т.д.): ")
     console.log(file);
     console.log("========================");
     let imageUrl = URL.createObjectURL(file);
+    console.log("Временная ссылка на путь к файлу: ")
     console.log(imageUrl);
     console.log("========================");
     let imgElement = document.getElementById("photo");
+    console.log("Тег <img> после всех изменений: ");
     console.log(imgElement);
-    console.log("========================"); 
-       imgElement.src = imageUrl;
-
+    console.log("========================");
+    imgElement.src = imageUrl;
 }
