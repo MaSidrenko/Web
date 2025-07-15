@@ -27,7 +27,7 @@ input {
   height: 20px;
   width: 350px;
   font-size: 15px;
-  background-color: #323232;
+   background-color: rgb(0, 0, 0);
   color: green;
 }
 input:focus {

@@ -2,7 +2,7 @@
 
 
 function GenereteFigure() {
-    let size = document.getElementById('size').value;
+    let size = Number(document.getElementById('size').value);
     document.body.innerHTML = '';
     document.writeln('<pre>')
     document.writeln('<div class="terminal"><div class= "prompt">dark_soulPC@MaximSidorenko:~/E:/Users/Maxim_Sidorenko/sourceVS/Web/02-JavaScript/01-geometria/run GenereteFigure.js</div >')
@@ -14,25 +14,25 @@ function GenereteFigure() {
         }
         document.write('<br>');
     }
-    
+
     document.write('<br>');
-    
+
     for (let i = 0; i < size; i++) {
         for (let j = 0; j <= i; j++) {
             document.write('* ');
         }
         document.write('<br>');
     }
-    
+
     document.write('<br>');
-    
+
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size - i; j++) {
             document.write('* ');
         }
         document.write('<br>');
     }
-    
+
     document.write('<br>');
     // document.writeln('<pre>')
     for (var i = 0; i < size; i++) {
@@ -46,9 +46,9 @@ function GenereteFigure() {
         }
         document.write('<br>');
     }
-    
+
     document.write('<br>');
-    
+
     for (var i = 0; i < size; i++) {
         for (var j = size - 1; j >= 0; j--) {
             if (j <= i) {
@@ -59,49 +59,60 @@ function GenereteFigure() {
         }
         document.write('<br>');
     }
-    
+
     document.write('<br>');
+
+    // for (var i = 0; i < size; i++) {
+    //     for (var j = size; j >= 0; j--) {
+    //         if (i == j) {
+    //             document.write("/");
+    //         }
+    //         else {
+    //             document.write("&nbsp");
+    //         }
+    //     }
+    //     for (var j = 0; j < size; j++) {
+    //         if (i == j) {
+    //             document.write("\\");
+    //         } else {
+    //             document.write("&nbsp");
+    //         }
+    //     }
+    //     document.write('<br>');
+    // }
+    // for (var i = 0; i < size; i++) {
+    //     for (var j = 0; j <= size; j++) {
+    //         if (i == j) {
+    //             document.write("\\");
+    //         }
+    //         else {
+    //             document.write("&nbsp");
+    //         }
+    //     }
+    //     for (var j = size; j > 0; j--) {
+    //         if (i == j) {
+    //             document.write("/");
+    //         }
+    //         else {
+    //             document.write("&nbsp");
+    //         }
+    //     }
+    //     document.write("<br>");
+    // }
+
+    // document.write('<br>');
+    // document.write('<pre>')
     
-    for (var i = 0; i < size; i++) {
-        for (var j = size; j >= 0; j--) {
-            if (i == j) {
-                document.write("/");
-            }
-            else {
-                document.write("&nbsp");
-            }
+    for (let i = 0; i < size * 2; i++) {
+        for (let j = 0; j < size * 2; j++) {
+            if (i + size == j || j + size == i) document.write('\\');
+            else if (i == size - 1 - j || i - size == size * 2 - 1 - j) document.write('/');
+            else document.write('&nbsp;');
         }
-        for (var j = 0; j < size; j++) {
-            if (i == j) {
-                document.write("\\");
-            } else {
-                document.write("&nbsp");
-            }
-        }
-        document.write('<br>');
+        document.writeln();
     }
-    for (var i = 0; i < size; i++) {
-        for (var j = 0; j < size; j++) {
-            if (i == j) {
-                document.write("\\");
-            }
-            else {
-                document.write("&nbsp");
-            }
-        }
-        for (var j = size; j >= 0; j--) {
-            if (i == j) {
-                document.write("/");
-            }
-            else {
-                document.write("&nbsp");
-            }
-        }
-        document.write("<br>");
-    }
-    
-    document.write('<br>');
-    
+    // document.write('</pre>')
+
     for (var i = 0; i < size; i++) {
         for (var j = 0; j < size; j++) {
             if ((i + j) % 2 == 0) {
@@ -121,7 +132,7 @@ function GenereteFigure() {
     document.writeln('<pre>')
     document.writeln('<div class="terminal"><div class="prompt">dark_soulPC@MaximSidorenko:~/E:/Users/Maxim_Sidorenko/sourceVS/Web/02-JavaScript/01-geometria$<span class="cursor">_</span></div>')
     document.writeln('</pre>')
-    
+
 }
 
 function Cancle() {
