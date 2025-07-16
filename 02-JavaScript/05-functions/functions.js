@@ -47,8 +47,8 @@ function setImage() {
     console.log(imageUrl);
     console.log("========================");
     let imgElement = document.getElementById("photo");
+    imgElement.src = imageUrl;
     console.log("Тег <img> после всех изменений: ");
     console.log(imgElement);
     console.log("========================");
-    imgElement.src = imageUrl;
 }
