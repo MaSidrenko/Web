@@ -4,22 +4,22 @@
   align-items: center;
 }
 
-#background_switch, #background_switch_second {
+#background_switch,
+#background_switch_second {
   width: 32px;
   height: 32px;
   margin: 24px;
   background-size: 32px 32px;
   position: absolute;
-  right:  10px;
- /* -webkit-transition: opacity 3s; */
-
+  right: 10px;
+  /* -webkit-transition: opacity 3s; */
 }
 #background_switch {
-    background-image: url(img/sun.png);
-    filter: brightness(0) invert(1);
+  background-image: url(img/sun.png);
+  filter: brightness(0) invert(1);
 }
 #background_switch_second {
-    background-image: url(img/moon.png);
+  background-image: url(img/moon.png);
 }
 img[src="img/sun.jpg"] {
   filter: brightness(0) invert(1);
@@ -30,16 +30,15 @@ img[src="img/sun.jpg"] {
   color: rgb(250, 100, 0);
 }
 .light #background_switch {
-    opacity: 0;
+  opacity: 0;
   /* background-image: url("img/moon.png"); */
-
 }
 .dark {
   background: black;
   color: green;
 }
 .dark #background_switch_second {
-    opacity: 0;
+  opacity: 0;
   /* background-image: url("img/sun.png"); */
 }
 #delay {
@@ -51,4 +50,16 @@ img[src="img/sun.jpg"] {
   width: 400px;
   height: 300px;
   border: solid 1px;
+}
+#clock {
+  text-align: center;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+}
+#clock h3 {
+  margin: 10px;
+}
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
 }
