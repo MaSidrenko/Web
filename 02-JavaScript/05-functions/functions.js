@@ -97,28 +97,52 @@ document.getElementById("btnStart").onclick = function startCountdownTimer() {
 }
 
 function tickCountdown() {
+    const SECONDS_IN_MINUTE = 60;
+    const SECONDS_IN_HOURS = SECONDS_IN_MINUTE * 60;
+    const SECONDS_IN_DAY = SECONDS_IN_HOURS * 24;
+    const SECONDS_IN_WEEK = SECONDS_IN_DAY * 7;
+    const DAYS_IN_MONTH = 365.25 / 12;
+    const SECONDS_IN_MONTH = SECONDS_IN_DAY * DAYS_IN_MONTH;
+    const SECONDS_IN_YEAR = SECONDS_IN_DAY * 365 + SECONDS_IN_HOURS * 6;
+
     if (!document.getElementById("targetTime").disabled) return;
     let now = new Date();
     let targetDateControl = document.getElementById("targetDate");
     let targetTimeControl = document.getElementById("targetTime");
+   
     let targetDate = targetDateControl.valueAsDate;
     let targetTime = targetTimeControl.valueAsDate;
+   
+    targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
+    targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
+   
     targetTime.setFullYear(targetDate.getFullYear());
     targetTime.setMonth(targetDate.getMonth());
     targetTime.setDate(targetDate.getDate());
-
+    
     let duration = targetTime - now;
-    let timestamp = Math.trunc(duration/1000);
-    document.getElementById("result").innerHTML = timestamp; 
-// Пазность дат вычисляется в формате Timestamp
-// Timestamp - это количество миллисекунд от 1 января 1970
-    targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
-    targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
+    let timestamp = Math.floor(duration / 1000);
+    document.getElementById("result").innerHTML = timestamp;
+    // Пазность дат вычисляется в формате Timestamp
+    // Timestamp - это количество миллисекунд от 1 января 1970
+    
+    let time_of_day = timestamp % SECONDS_IN_DAY;
+    let hours = Math.floor(time_of_day / SECONDS_IN_HOURS);
+    if(hours > 0) time_of_day = (time_of_day % (hours*SECONDS_IN_HOURS)); 
+
+    let minutes = Math.floor(time_of_day / SECONDS_IN_MINUTE);
+    if(minutes > 0) time_of_day = (time_of_day % (minutes*SECONDS_IN_MINUTE));
+
+    let seconds = time_of_day;
+
+    
+
+    document.getElementById("hours-unit").innerHTML =   addLeadingZero(hours);
+    document.getElementById("minutes-unit").innerHTML = addLeadingZero(minutes);
+    document.getElementById("seconds-unit").innerHTML = addLeadingZero(seconds);
 
     document.getElementById("target-date-value").innerHTML = targetDate;
     document.getElementById("target-time-value").innerHTML = targetTime;
 
-   setTimeout(tickCountdown, 100);
-
-    
+    setTimeout(tickCountdown, 100);
 }
