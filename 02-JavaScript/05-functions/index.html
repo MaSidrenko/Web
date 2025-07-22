@@ -41,6 +41,31 @@
         <label for="show-date">Show Date</label>
         <input type="checkbox" name="show-weekday" id="show-weekday">
         <label for="show-weekday">Show Weekday</label>
+        <div id="countdown-timer">
+            <h2>Countdown Timer</h2>
+            <input type="date" id="targetDate" value="2025-07-26">
+            <input type="time" id="targetTime" value="20:00">
+            <input type="button" id="btnStart" value="Start">
+        </div>
+        <div id="display">
+            <div class="time-block">
+                <div id="hours-unit" class="time-unit"></div>
+                <div id="hours-marker" class="time-marker">Hours</div>
+            </div>
+            <div class="time-block">
+                <div id="minutes-unit" class="time-unit"></div>
+                <div id="minutes-marker" class="time-marker">Minutes</div>
+            </div>
+            <div class="time-block">
+                <div id="seconds-unit" class="time-unit"></div>
+                <div id="seconds-marker" class="time-marker">Seconds</div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="target-date-value"></div>
+        <div id="target-time-value"></div>
+        <div id="result"></div>
     </div>
         <hr>
         <h2>Functions</h2>

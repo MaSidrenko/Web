@@ -62,4 +62,31 @@ img[src="img/sun.jpg"] {
 input[type="checkbox"] {
   width: 24px;
   height: 24px;
+} 
+
+#display {
+  border: solid 1px;
+  font-size: 32px; 
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
+}
+
+.time-block {
+  border: solid 3px;
+  border-radius: 10px;
+  /* di */
+}
+.time-unit {
+  font-size: 48px;
+  color: rgb(200, 0, 0);
+  width: 148px;
+  height: 148px;
+  background-color: Highlight;
+}
+.time-marker {
+  border: solid 1px;
+  background-color: darkred;
+  color: aliceblue;
 }

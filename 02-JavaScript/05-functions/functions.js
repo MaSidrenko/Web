@@ -39,7 +39,7 @@ function setImage() {
     // console.log(document.getElementById("photo").src)
     let file_name = document.getElementById("image-file");
     let = file = file_name.files[0];
-    console.log("Объект файла, в нашем случаее картинки (C названием, типом, весом и т.д.): ")
+    console.log("Объект файла, в нашем случаее картинки (C названием, типом, весом и т.д.): ");
     console.log(file);
     console.log("========================");
     let imageUrl = URL.createObjectURL(file);
@@ -59,12 +59,12 @@ document.body.onload = function tick_timer() {
     document.getElementById("hours").innerHTML = addLeadingZero(time.getHours());
     document.getElementById("minutes").innerHTML = addLeadingZero(time.getMinutes());
     document.getElementById("seconds").innerHTML = addLeadingZero(time.getSeconds());
-    
-    document.getElementById("year").innerHTML =     addLeadingZero(time.getFullYear());
-    document.getElementById("month").innerHTML =    addLeadingZero(time.getMonth() + 1);
-    document.getElementById("day").innerHTML =      addLeadingZero(time.getDate());
 
-    document.getElementById('weekday').innerHTML = time.toLocaleDateString("en-US", {weekday:'long'});
+    document.getElementById("year").innerHTML = addLeadingZero(time.getFullYear());
+    document.getElementById("month").innerHTML = addLeadingZero(time.getMonth() + 1);
+    document.getElementById("day").innerHTML = addLeadingZero(time.getDate());
+
+    document.getElementById('weekday').innerHTML = time.toLocaleDateString("en-US", { weekday: 'long' });
     // if(document.getElementById("show-date").checked) {
     //     document.getElementById("current-date").style.visibility = "visible";
     // }
@@ -73,12 +73,52 @@ document.body.onload = function tick_timer() {
     //     // document.getElementById("current-date").innerHTML = "";
     // }
     document.getElementById("current-date").style.visibility =
-    document.getElementById("show-date").checked ? "visible" : "hidden";
+        document.getElementById("show-date").checked ? "visible" : "hidden";
     document.getElementById("weekday").style.visibility =
-    document.getElementById("show-weekday").checked ? "visible" : "hidden";
+        document.getElementById("show-weekday").checked ? "visible" : "hidden";
     setTimeout(tick_timer, 100) //ф-ция setTimeout(function delay), вызавает function с delay
 }
 
 function addLeadingZero(num) {
     return num < 10 ? "0" + num : num;
+}
+
+document.getElementById("btnStart").onclick = function startCountdownTimer() {
+    let targetDate = document.getElementById("targetDate");
+    let targetTime = document.getElementById("targetTime");
+    let btnStart = document.getElementById("btnStart");
+    targetDate.disabled = targetTime.disabled = !targetDate.disabled;
+    if (btnStart.value === "Start") {
+        btnStart.value = "Stop";
+        tickCountdown();
+    } else {
+        btnStart.value = "Start";
+    }
+}
+
+function tickCountdown() {
+    if (!document.getElementById("targetTime").disabled) return;
+    let now = new Date();
+    let targetDateControl = document.getElementById("targetDate");
+    let targetTimeControl = document.getElementById("targetTime");
+    let targetDate = targetDateControl.valueAsDate;
+    let targetTime = targetTimeControl.valueAsDate;
+    targetTime.setFullYear(targetDate.getFullYear());
+    targetTime.setMonth(targetDate.getMonth());
+    targetTime.setDate(targetDate.getDate());
+
+    let duration = targetTime - now;
+    let timestamp = Math.trunc(duration/1000);
+    document.getElementById("result").innerHTML = timestamp; 
+// Пазность дат вычисляется в формате Timestamp
+// Timestamp - это количество миллисекунд от 1 января 1970
+    targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
+    targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
+
+    document.getElementById("target-date-value").innerHTML = targetDate;
+    document.getElementById("target-time-value").innerHTML = targetTime;
+
+   setTimeout(tickCountdown, 100);
+
+    
 }
