@@ -133,7 +133,20 @@ function tickCountdown() {
     date = date * SECONDS_IN_DAY;
     let str_date = "";
     let years = Math.floor(date / SECONDS_IN_YEAR); str_date += `Years: ${years}\n`;
-    if (years > 0) date = (date % (years * SECONDS_IN_YEAR))
+    if (years != 0) {
+        date = (date % (years * SECONDS_IN_YEAR))
+        let year_unit = document.getElementById("years-unit");
+        if (year_unit == null) {
+            let display = document.getElementById("display");
+            display.prepend(createTimeBlock("years", years));
+        } else {
+            year_unit.innerHTML = years;
+        }
+    } 
+    else {
+        removeTimeBlock("years");
+    }
+    
     let monthes = Math.floor(date / SECONDS_IN_MONTH); str_date += `Mounthes: ${monthes}\n`;
     if (monthes > 0) date = (date % (monthes * SECONDS_IN_MONTH))
     let weeks = Math.floor(date / SECONDS_IN_WEEK); str_date += `Weeks: ${weeks}\n`;
@@ -164,4 +177,32 @@ function tickCountdown() {
     document.getElementById("target-time-value").innerHTML = targetTime;
 
     setTimeout(tickCountdown, 100);
+}
+
+
+function createTimeBlock(name, value) {
+    let time_block = document.createElement("div");
+    time_block.className = "time-block";
+    let unit = document.createElement("div");
+    unit.id = `${name}-unit`
+    unit.className = "time-unit";
+    unit.innerHTML = addLeadingZero(value);
+
+    let marker = document.createElement("div");
+    marker.id = `${name}-marker`;
+    marker.className = "time-marker";
+    marker.innerHTML = name;
+
+    time_block.append(unit);
+    time_block.append(marker);
+
+    return time_block;
+}
+function removeTimeBlock(name) {
+    let unit = document.getElementById(`${name}-unit`);
+    if (unit != null) {
+        let block = unit.parentElement;
+        let block_parent = block.parentElement;
+        block_parent.removeChild(block);
+    }
 }
