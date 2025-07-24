@@ -109,35 +109,54 @@ function tickCountdown() {
     let now = new Date();
     let targetDateControl = document.getElementById("targetDate");
     let targetTimeControl = document.getElementById("targetTime");
-   
+
     let targetDate = targetDateControl.valueAsDate;
     let targetTime = targetTimeControl.valueAsDate;
-   
+
     targetDate.setHours(targetDate.getHours() + targetDate.getTimezoneOffset() / 60);
     targetTime.setHours(targetTime.getHours() + targetTime.getTimezoneOffset() / 60);
-   
+
     targetTime.setFullYear(targetDate.getFullYear());
     targetTime.setMonth(targetDate.getMonth());
     targetTime.setDate(targetDate.getDate());
-    
+
+
     let duration = targetTime - now;
     let timestamp = Math.floor(duration / 1000);
     document.getElementById("result").innerHTML = timestamp;
-    // Пазность дат вычисляется в формате Timestamp
+    // Разность дат вычисляется в формате Timestamp
     // Timestamp - это количество миллисекунд от 1 января 1970
-    
+
     let time_of_day = timestamp % SECONDS_IN_DAY;
+    //Убираем время дня из timestamp:
+    let date = Math.floor(timestamp / SECONDS_IN_DAY);
+    date = date * SECONDS_IN_DAY;
+    let str_date = "";
+    let years = Math.floor(date / SECONDS_IN_YEAR); str_date += `Years: ${years}\n`;
+    if (years > 0) date = (date % (years * SECONDS_IN_YEAR))
+    let monthes = Math.floor(date / SECONDS_IN_MONTH); str_date += `Mounthes: ${monthes}\n`;
+    if (monthes > 0) date = (date % (monthes * SECONDS_IN_MONTH))
+    let weeks = Math.floor(date / SECONDS_IN_WEEK); str_date += `Weeks: ${weeks}\n`;
+    if (weeks > 0) date = (date % (weeks * SECONDS_IN_WEEK))
+    let days = Math.ceil(date / SECONDS_IN_DAY); str_date += `Days: ${days}\n`;
+    // if (days > 0) date = (date % (years * SECONDS_IN_DAY))
+    console.log(str_date);
+    console.log('|===========================================================|');
     let hours = Math.floor(time_of_day / SECONDS_IN_HOURS);
-    if(hours > 0) time_of_day = (time_of_day % (hours*SECONDS_IN_HOURS)); 
+    console.log(`hours: ${hours}`);
+    console.log('|===========================================================|');
+    if (hours > 0) time_of_day = (time_of_day % (hours * SECONDS_IN_HOURS));
 
     let minutes = Math.floor(time_of_day / SECONDS_IN_MINUTE);
-    if(minutes > 0) time_of_day = (time_of_day % (minutes*SECONDS_IN_MINUTE));
+    console.log(`minutes: ${minutes}`);
+    console.log('|===========================================================|');
+    if (minutes > 0) time_of_day = (time_of_day % (minutes * SECONDS_IN_MINUTE));
 
     let seconds = time_of_day;
+    console.log(`seconds: ${seconds}`);
+    console.log('|===========================================================|');
 
-    
-
-    document.getElementById("hours-unit").innerHTML =   addLeadingZero(hours);
+    document.getElementById("hours-unit").innerHTML = addLeadingZero(hours);
     document.getElementById("minutes-unit").innerHTML = addLeadingZero(minutes);
     document.getElementById("seconds-unit").innerHTML = addLeadingZero(seconds);
 
